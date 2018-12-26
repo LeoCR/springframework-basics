@@ -21,9 +21,17 @@ public class MainApp {
 		theAccountDAO.addAccount(account,true);
 		theAccountDAO.doWork();
 		
+		//call the accountDAO getter/setter methods
+		theAccountDAO.setName("foobar");
+		theAccountDAO.setServiceCode("Silver");
+		
+		String name = theAccountDAO.getName();
+		String serviceCode = theAccountDAO.getServiceCode();
+		
 		theMembershipDAO.addAccount();
 		theMembershipDAO.goSleep();
 		//theAccountDAO.addAccount();
+		
 		//close the context
 		context.close();
 	}
