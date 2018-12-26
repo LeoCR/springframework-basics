@@ -24,6 +24,7 @@ public class MainApp {
 		theMembershipDAO.addAccount();
 		theMembershipDAO.goSleep();
 		//theAccountDAO.addAccount();
+		
 		//close the context
 		context.close();
 	}
