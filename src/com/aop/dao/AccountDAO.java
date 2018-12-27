@@ -1,5 +1,8 @@
 package com.aop.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.aop.Account;
@@ -8,6 +11,19 @@ import com.aop.Account;
 public class AccountDAO {
 	private String name;
 	private String serviceCode;
+	//ad a new method : findAccounts()
+	public List<Account> findAccounts(){
+		List<Account> accounts =new ArrayList<>();
+		Account temp1=new Account("John","Silver");
+		Account temp2=new Account("Madhu","Platinum");
+		Account temp3=new Account("Lucy","Silver");
+		
+		accounts.add(temp1);
+		accounts.add(temp2);
+		accounts.add(temp3);
+		//creat
+		return accounts;
+	}
 	public void addAccount() {
 		System.out.println(getClass()+" : Doing My Db work: Adding an Account");
 	}

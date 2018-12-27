@@ -18,6 +18,8 @@ public class MainApp {
 		//call the business method buisiiness method
 		
 		Account account= new Account();
+		account.setName("Marshall");
+		account.setLevel("Hard");
 		theAccountDAO.addAccount(account,true);
 		theAccountDAO.doWork();
 		
