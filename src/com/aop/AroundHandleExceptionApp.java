@@ -7,8 +7,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.aop.service.TrafficFortuneService;
 
-public class AroundWithLoggerApp {
-	private static Logger myLogger=Logger.getLogger(AroundWithLoggerApp.class.getName());
+public class AroundHandleExceptionApp {
+	private static Logger myLogger=Logger.getLogger(AroundHandleExceptionApp.class.getName());
 	public static void main(String[] args) {
 		//read spring config java class
 		AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(Config.class);
@@ -18,7 +18,10 @@ public class AroundWithLoggerApp {
 		myLogger.info("\n Main Program: AroundDemoApp");
 		
 		myLogger.info("Calling getFortune");
-		String data = theFortuneService.getFortune();
+		
+		boolean tripWire=true;
+		String data = theFortuneService.getFortune(tripWire);
+		
 		myLogger.info("\nMy fortune is "+data);
 		myLogger.info("Finished");
 		//close the context

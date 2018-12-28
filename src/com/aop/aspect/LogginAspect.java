@@ -30,7 +30,17 @@ public class LogginAspect {
 		//get begin timestamp
 		long begin = System.currentTimeMillis();
 		//now lets execute the method
-		Object result=theProceedingJoinPoint.proceed();
+		Object result=null;
+		try {
+			result =theProceedingJoinPoint.proceed();
+		} catch (Exception e) {
+			//e.printStackTrace();
+			//log the exception
+			logger.warning(e.getMessage());
+			//give user a custom message
+			result="Major accident! But no worries,"+
+			" Your private AOP helicopter is on the way";
+		}
 		//get end timestamp
 		long end = System.currentTimeMillis();
 		//compute duration and display it
