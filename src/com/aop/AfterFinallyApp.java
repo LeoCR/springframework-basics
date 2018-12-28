@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.aop.dao.AccountDAO;
 import com.aop.dao.MembershipDAO;
 
-public class AfterThrowingApp {
+public class AfterFinallyApp {
 
 	public static void main(String[] args) {
 		//read spring config java class
@@ -18,7 +18,7 @@ public class AfterThrowingApp {
 		List<Account> accounts=null;
 		try {
 			//add a boolean flag to simulate exceptions
-			boolean tripwire=true;
+			boolean tripwire=false;
 			accounts=theAccountDAO.findAccounts(tripwire);
 		} catch (Exception e) {
 			System.out.println("\n\nMain Program ... caught exception "+e);
