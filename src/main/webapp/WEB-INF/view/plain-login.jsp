@@ -20,11 +20,11 @@
 		<p>
 			Password: <input type="password" name="password"/>
 		</p>
-		<i class="failed">
+		<span class="failed">
 				<c:if test="${param.error!=null }">
 					Sorry You entered invalid username/password
 				</c:if>
-		</i>
+		</span>
 		<br><br>
 		<input type="submit" value="Login"/>
 	</form:form>
