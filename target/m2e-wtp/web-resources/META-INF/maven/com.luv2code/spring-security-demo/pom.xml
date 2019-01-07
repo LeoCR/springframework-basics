@@ -7,7 +7,7 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>spring-security-custom-login-form</name>
+	<name>spring-security-logout</name>
 
 	<properties>
 		<springframework.version>5.0.2.RELEASE</springframework.version>
@@ -66,7 +66,7 @@
 
 	<!-- TO DO: Add support for Maven WAR Plugin -->
 	<build>
-		<finalName>spring-security-custom-login-form</finalName>
+		<finalName>spring-security-logout</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
