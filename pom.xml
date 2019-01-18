@@ -7,7 +7,7 @@
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>spring-security-user-roles</name>
+	<name>spring-security-jdbc-plaintext</name>
 
 	<properties>
 		<springframework.version>5.0.2.RELEASE</springframework.version>
@@ -42,7 +42,17 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-
+		<!-- Add MySQL and C3P0 support -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.2</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
@@ -71,7 +81,7 @@
 
 	<!-- TO DO: Add support for Maven WAR Plugin -->
 	<build>
-		<finalName>spring-security-user-roles</finalName>
+		<finalName>spring-security-jdbc-plaintext</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
