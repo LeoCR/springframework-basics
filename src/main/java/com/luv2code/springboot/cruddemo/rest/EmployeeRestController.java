@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luv2code.springboot.cruddemo.dao.EmployeeDAO;
 import com.luv2code.springboot.cruddemo.entity.Employee;
 import com.luv2code.springboot.cruddemo.service.EmployeeService;
 
@@ -26,7 +25,6 @@ public class EmployeeRestController {
 	public EmployeeRestController(EmployeeService theEmployeeService) {
 		employeeService = theEmployeeService;
 	}
-	
 	// expose "/employees" and return list of employees
 	@GetMapping("/employees")
 	public List<Employee> findAll() {
@@ -48,7 +46,6 @@ public class EmployeeRestController {
 		//this is to force a save of new item ... instead of update
 		theEmployee.setId(0);
 		employeeService.save(theEmployee);
-		
 		return theEmployee;
 	}
 	//add mapping for PUT /employees - updated existing employee
@@ -67,7 +64,6 @@ public class EmployeeRestController {
 		}
 		employeeService.deleteById(employeeId);
 		return "Deleted employee id - "+employeeId;
-		
 	}
 }
 
